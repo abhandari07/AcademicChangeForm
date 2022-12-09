@@ -1,0 +1,39 @@
+GET:
+http://127.0.0.1:3000/api/auth/login
+
+{
+    "email": "abc@gmail.com",
+    "password": "Password@1"
+}
+
+POST:
+
+
+http://127.0.0.1:3000/api/users
+
+{
+    "email": "abc@gmail.com",
+    "password": "Password@1",
+    "first_name": "Achyut",
+    "last_name": "Bhattarai"
+}
+
+
+Delete:
+
+http://127.0.0.1:3000/api/users/1
+
+
+
+POST Students:
+
+http://127.0.0.1:3000/api/students
+{
+    "BID": "121",
+    "Advisor_ID":"112",
+    "Dean_ID":"ww",
+    "School_ID":"11",
+    "created_at":null,
+    "updated_at":null,
+    "User_ID":"2"
+}
