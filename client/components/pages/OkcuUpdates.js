@@ -43,7 +43,7 @@ const OkcuUpdates = (props) => {
       <CardContent>
         <List>
           {okcuUpdates.map((item, i) => (
-            <a onClick={(event) => {event.preventDefault(); window.open(item.link);}} style={{color: 'black','text-decoration': 'none','cursor':'pointer' }}>
+            <a onClick={(event) => {event.preventDefault(); window.open(item.link);}} style={{color: 'black','textDecoration': 'none','cursor':'pointer' }}>
               <ListItem divider={i < okcuUpdates.length - 1} key={item.id}>
                 <ListItemIcon>
                   <Avatar>

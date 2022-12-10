@@ -6,7 +6,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { Card, CardHeader, CardContent } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import CustomizedSnackbar from '../common/snakebar/CustomizedSnackbar';
-// Import custom components
 import renderText from '../common/form/renderText';
 
 const styles = {
@@ -83,7 +82,7 @@ const SignUpForm = (props) => {
                 Create New Account
               </Button>
               <p>
-                Already have an account? <Link to={'/'}>Login</Link>.
+                Already have an account? <a href='/'>Login</a>.
               </p>
             </div>
           </form>

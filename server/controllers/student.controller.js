@@ -23,6 +23,23 @@ export function findAll(req, res) {
         );
 }
 
+export function getStudentList(req, res) {
+    console.log("$$$$$$$$$$$$$$$$")
+    let query_builder = Student.forge();
+    query_builder.query(function (qb) {
+            qb.select('students.BID','students.catalogYear','users.first_name','users.last_name','users.email','users.id')
+            .leftJoin('users', 'users.id', 'students.student_id');
+        }).fetchAll().then(student => res.json({
+            error: false,
+            data: student.toJSON()
+        })
+        )
+        .catch(err => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+                error: err
+            })
+        );
+}
+
 /**
  *  Find student by id
  *

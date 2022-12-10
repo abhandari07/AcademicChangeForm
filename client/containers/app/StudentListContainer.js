@@ -22,7 +22,8 @@ class StudentList extends Component {
   }
 
   componentDidMount(){
-    var studentUrl = 'users/getStudent'
+    console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    var studentUrl = 'students/getStudentList'
     httpBase().post(studentUrl)
         .then((response) => {
             this.setState({ studentData: response.data.data, isFetching: false })
@@ -43,7 +44,8 @@ class StudentList extends Component {
 
   render() {
     var studentData= this.state.studentData;
-
+    console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    console.log(studentData)
     return <CompStudentList studentData={studentData} onSubmit={this.submitForm} />;
   }
 }

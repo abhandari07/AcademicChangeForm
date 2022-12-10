@@ -72,7 +72,7 @@ const MiniDrawer = (props) => {
       open={navDrawerOpen}
     >
       <div className={classes.drawerHeader} >
-         <img src="img/okcu.png" className={classes.logo} alt="" align="middle"/>
+         <img src="/img/okcu.png" className={classes.logo} alt="" align="middle"/>
       </div>
 
       <Divider />

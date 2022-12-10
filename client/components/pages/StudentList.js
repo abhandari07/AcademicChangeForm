@@ -8,7 +8,6 @@ import { TableBody } from '@material-ui/core';
 import { TableCell } from '@material-ui/core';
 import { TableHead } from '@material-ui/core';
 import { TableRow } from '@material-ui/core';
-import { ReorderOutlined } from '@material-ui/icons';
 
 const styles = {
     root: {
@@ -43,7 +42,7 @@ const styles = {
   
   const StudentList = (props) => {
     const {classes,studentData } = props;
-
+    var catelogYear = ""
     return (
         <Card className={classes.card}>
           <CardHeader className={classes.cardHeader} title="STUDENT LIST" />
@@ -54,34 +53,31 @@ const styles = {
                         <TableRow>
                           <TableCell align="left">First Name</TableCell>
                           <TableCell align="left">Last Name</TableCell>
+                          <TableCell align="left">BID</TableCell>
                           <TableCell align="left">Email</TableCell>
-                          <TableCell align="left">User Type</TableCell>
-                          <TableCell align="left">Advisor Approval</TableCell>
-                          <TableCell align="left">Dean Approval</TableCell>
+                          <TableCell align="left">Catelog Year</TableCell>
+                          <TableCell align="left">Is Add Only</TableCell>
+                          <TableCell align="left">Action</TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
                           {studentData.map((row, index) => (
                             <TableRow>
-                              <TableCell align="left">{row.first_name}</TableCell>
-                              <TableCell align="left">{row.last_name}</TableCell>
+                              <TableCell align="left">{row.first_name} </TableCell>
+                              <TableCell align="left">{row.last_name} </TableCell>
+                              <TableCell align="left">{row.BID}</TableCell>
                               <TableCell align="left">{row.email}</TableCell>
-                              <TableCell align="left">{row.user_type}</TableCell>
-                              <TableCell align="left" label="Approved">
-                                {row.is_advisor_approved == 0 ?
-                                    <button>Approval Required</button>
+                              <TableCell align="left">{row.catalogYear}</TableCell>
+                              <TableCell align="left">
+                                {row.isAddOnly == 0 ?
+                                  "True"
                                   :
-                                  Approved
-                                }</TableCell>
-                              <TableCell align="left" label="Approved">
-                                {row.is_dean_approved == 0 ?
-                                    <button>Approval Required</button>
-                                  :
-                                  Approved
-                                }</TableCell>
-
-                                
-
+                                  "False"
+                                }
+                                </TableCell>
+                              <TableCell align="left"><a target='_blank' href={"/academicDetails/"+row.id }>
+                                View Details</a>
+                              </TableCell>
                             </TableRow>
                         ))}
                       </TableBody>

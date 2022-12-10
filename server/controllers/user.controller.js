@@ -115,11 +115,9 @@ export function findById(req, res) {
  * @returns {*}
  */
 export async function store(req, res) {
-    console.log("I am here")
     const {first_name, last_name, email,user_type} = req.body;
     const password = bcrypt.hashSync(req.body.password, 10);
-    const signature = req.body.first_name + " " + req.body.last_name 
-    console.log("I am here")
+    const signature = req.body.first_name + " " + req.body.last_name
     
     User.where({email: email}).fetch({require: false}).then(user => {
         if (user) {

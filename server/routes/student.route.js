@@ -15,7 +15,6 @@ router.route('/')
         studentCtrl.findAll(req, res);
     });
 
-
 router.route('/:id')
 
     .get(isAuthenticated, (req, res) => {
@@ -32,5 +31,9 @@ router.route('/:id')
         studentCtrl.destroy(req, res);
     });
 
-
+router.route('/getStudentList')
+    .post(isAuthenticated, (req, res) => {
+        studentCtrl.getStudentList(req, res);
+    })
+    
 export default router;
